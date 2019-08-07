@@ -1,0 +1,1 @@
+The config doesen't need anything more to work correctly, if you want to set up your wallpaper you have to edit the config file (search for 'Desktop background' an then just set the path to your image)
