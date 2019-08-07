@@ -8,3 +8,4 @@ That's a list of dependencies for this config
 -Unclutter (to enable pointer trasparency when not in use)
 -Xfce4-terminal (it's just a terminal, use whatever you want asd)
 -Xinput (for keybord & mouse settings)
+-Xrandr (for multi-screen visualization of polybar)
