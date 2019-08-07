@@ -1,7 +1,9 @@
 That's a list of dependencies for this config
 
+-Awesome-font (for all the icons on polybar)
 -Feh (an image visualizer, just for background)
 -Gnome-screenshot (just a screenshot tool)
+-Hack-font (a generic monospaced font that i use for pretty much everything)
 -PCmanFM (a graphical file manager, 'cuz im lazy af)
 -Polybar (a status bar that i find superior to standard i3-bar, config included)
 -Rofi (a program launcher)
