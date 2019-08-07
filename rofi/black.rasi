@@ -1,0 +1,123 @@
+/*
+ * ROFI color theme
+ *
+ * Based on Base16 Material Color Scheme (https://github.com/ntpeters/base16-materialtheme-scheme)
+ *
+ * User: ErreKappa1
+ * Copyright: Tomas Zaluckij
+ */
+
+* {
+	1color: #000000;
+	2color: #546E7A;
+	3color: #4F4F4F;
+	4color: #C3E88D;
+	5color: #FFFFFF;
+
+
+
+	spacing: 0;
+	background-color: transparent;
+
+	font: "Hack 12";
+}
+
+window {
+	transparency: "real";
+	/*fullscreen: true;*/
+	background-color: #000000;
+}
+
+mainbox {
+	children: [inputbar, message, sidebar, listview];
+	spacing: 10px;
+	/*margin: 20%;*/
+	padding: 15px 0;
+	border: 0px;
+	border-color: @3color;
+}
+
+inputbar {
+	padding: 0 19px;														/**/
+
+	children: [prompt, textbox-prompt-colon, entry, case-indicator];
+}
+
+prompt {
+	text-color: @5color;
+}
+
+textbox-prompt-colon {
+	expand: false;
+	str: ":";
+	margin: 0 1ch 0 0;
+	text-color: @5color;
+}
+
+entry {
+	text-color: @5color;
+}
+
+case-indicator {
+	text-color: @5color;
+}
+
+sidebar, message {
+	border: 0px 0;
+	border-color: @5color;
+}
+
+button, textbox {
+	background-color: @2color;
+	text-color: @3color;
+	padding: 5px;
+}
+
+button selected {
+	background-color: @5color;
+}
+
+listview {
+	scrollbar: true;
+	margin: 0 10px 0 15px;													/**/
+}
+
+scrollbar {
+	background-color: @3color;
+	handle-color: @5color;
+	handle-width: 10px;
+	border: 0 0px;
+	border-color: @5color;
+	margin: 0 0 0 20px;
+}
+
+element {
+	padding: 5px;
+	highlight: bold underline;
+}
+
+element normal {
+	background-color: transparent;
+}
+
+element selected {
+	background-color: @3color;
+}
+
+element alternate {
+	/*background-color: @2color;*/
+}
+
+element normal normal, element selected normal, element alternate normal {
+	text-color: @5color;
+}
+
+element normal urgent, element selected urgent, element alternate urgent {
+	text-color: @6color;
+}
+
+element normal active, element selected active, element alternate active {
+	text-color: @4color;
+}
+
+
