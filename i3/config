@@ -151,7 +151,7 @@ bindsym Control+Print exec gnome-screenshot -i
 bindsym $mod+p exec --no-startup-id pcmanfm
 
 # Desktop background
-exec_always --no-startup-id feh --bg-fill ~/Pictures/blackabsol.png
+exec_always --no-startup-id feh --bg-fill ~/.config/i3/wallpapers/blackabsol.png
 #exec xterm -geometry 80x66+0+0 -name login
 
 # Keyboard layouts
@@ -174,5 +174,5 @@ exec_always --no-startup-id unclutter &
 exec --no-startup-id aplay ~/Music/startup_winxp.wav 
 
 # I3Lock
-bindsym $mod+l exec --no-startup-id i3lock -i ~/Pictures/blackabsolblur.png -f -e
+bindsym $mod+l exec --no-startup-id i3lock -i ~/.config/i3/wallpapers/blackabsolblur.png -f -e
 
