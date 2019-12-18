@@ -1,5 +1,5 @@
-set $mod Mod4
-set $alt Mod1
+set $win Mod4
+set $mod Mod1
 font pango:DejaVu Sans Mono 8
 
 # use these keys for focus, movement, and resize directions when reaching for
@@ -19,22 +19,35 @@ bindsym $mod+Return exec --no-startup-id xfce4-terminal
 bindsym $mod+Shift+q kill
 
 # start rofi (a program launcher)
-bindsym $mod+d exec --no-startup-id rofi -location 1 -yoffset 30 -xoffset 0 -show drun -drun-match-fields name -lines 12 -width 20 -theme black
+###EDIT NEEDED, SETUP THE CORRECT PATH TO YOUR ROFI CONFIGURATIN###
+bindsym $mod+d exec --no-startup-id rofi -location 1 -yoffset 22 -xoffset 0 -show drun -drun-match-fields name -lines 8 -width 30 -theme black
 
-# change focus
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
+# change focus (hjkl)
+bindsym $mod+$Left focus left
+bindsym $mod+$Down focus down
+bindsym $mod+$Up focus up
+bindsym $mod+$Right focus right
 
-# move focused window
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
+# move focused window (hjkl)
+bindsym $mod+Shift+$Left move left
+bindsym $mod+Shift+$Down move down
+bindsym $mod+Shift+$Up move up
+bindsym $mod+Shift+$Right move right
+
+# change focus (arrow)
+#bindsym $mod+Left focus left
+#bindsym $mod+Down focus down
+#bindsym $mod+Up focus up
+#bindsym $mod+Right focus right
+
+# move focused window (arrow)
+#bindsym $mod+Shift+Left move left
+#bindsym $mod+Shift+Down move down
+#bindsym $mod+Shift+Up move up
+#bindsym $mod+Shift+$Right move right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+bindsym $mod+b split h
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -43,7 +56,7 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-# bindsym $mod+s layout stacking
+bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
@@ -98,10 +111,11 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
+
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
-# exit i3 (logs you out of your X session)
 
+# exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your work session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
@@ -112,16 +126,16 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym l resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym j resize shrink height 10 px or 10 ppt
-        bindsym h resize grow width 10 px or 10 ppt
+        bindsym l resize shrink width 5 px or 5 ppt
+        bindsym k resize grow height 5 px or 5 ppt
+        bindsym j resize shrink height 5 px or 5 ppt
+        bindsym h resize grow width 5 px or 5 ppt
 
         # same bindings, but for the arrow keys
-        bindsym Right resize shrink width 10 px or 10 ppt
-        bindsym Up resize grow height 10 px or 10 ppt
-        bindsym Down resize shrink height 10 px or 10 ppt
-        bindsym Left resize grow width 10 px or 10 ppt
+        bindsym Right resize shrink width 5 px or 5 ppt
+        bindsym Up resize grow height 5 px or 5 ppt
+        bindsym Down resize shrink height 5 px or 5 ppt
+        bindsym Left resize grow width 5 px or 5 ppt
 
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
@@ -132,17 +146,17 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Floating window max size
-floating_maximum_size 1080x720
+floating_maximum_size 710x580
 
 # Disable window borders
 for_window [class="^.*"] border pixel 1
 
 # Gaps
-gaps inner 4
-gaps outer 1
+gaps inner 2
 
 # Polybar
-exec_always --no-startup-id bash ~/.config/polybar/launch.sh
+###EDIT NEEDED, SETUP THE CORRECT PATH TO YOUR POLYBAR CONFIGURATIN###
+exec_always --no-startup-id bash ~/.config/polybar/script/launch.sh
 
 # Screenshot (gnome-screenshot) 052EFC
 bindsym Control+Print exec gnome-screenshot -i
@@ -150,29 +164,29 @@ bindsym Control+Print exec gnome-screenshot -i
 # File Manager (pcmanfm)
 bindsym $mod+p exec --no-startup-id pcmanfm
 
-# Desktop background
-exec_always --no-startup-id feh --bg-fill ~/.config/i3/wallpapers/blackabsol.png
-#exec xterm -geometry 80x66+0+0 -name login
+# Telegram desktop
+bindsym $mod+t exec --no-startup-id telegram-desktop
+
+# Desktop background 
+###EDIT NEEDED, SETUP THE CORRECT PATH TO YOUR BACKGROUND###
+exec_always --no-startup-id feh --bg-fill ~/Pictures/freeblackabsol/freeblackabsol.jpg
+#exec_always --no-startup-id feh --bg-fill ~/Pictures/winxp.jpg
 
 # Keyboard layouts
-exec_always --no-startup-id setxkbmap -layout it
+exec_always --no-startup-id setxkbmap -layout us
 
 # Network manager
 exec --no-startup-id nm-applet
 
-# Volume control
-
-
-# Backlight control
-
-
 # Mouse settings
-exec_always --no-startup-id bash ~/.config/i3/mouse-settings.sh
+exec --no-startup-id bash $HOME/.config/i3/script/mouse-settings.sh
 exec_always --no-startup-id unclutter &
 
 # Meme sound during startup
+###EDIT NEEDED, SETUP THE CORRECT PATH TO YOUR IDIOTIC STARTUP SOUND###
 exec --no-startup-id aplay ~/Music/startup_winxp.wav 
 
-# I3Lock
-bindsym $mod+l exec --no-startup-id i3lock -i ~/.config/i3/wallpapers/blackabsolblur.png -f -e
+# i3lock
+###EDIT NEEDED, SETUP THE CORRECT PATH TO YOUR LOCKSCREEN BACKGROUND WALLPAPER (need to be a .png)###
+bindsym $win+l exec --no-startup-id i3lock -e -i ~/Pictures/freeblackabsol/freeblackabsolblur.png -t
 

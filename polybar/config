@@ -17,7 +17,6 @@
 ;==========================================================
 
 [colors]
-;background = #000000
 background = #4F4F4F
 background-alt = #4F4F4F
 background-alt-2 = #07ADD0
@@ -25,14 +24,13 @@ background-alt-tray = #000000
 foreground = #FFFFFF
 foreground-alt = #FFFFFF
 alert = #FFFFFF
-warning = #FF0000
 dim-value = 0.5
 
 [bar/blkbar]
-width = 96%
-height = 26
-radius = 13.0
-offset-x = 960
+width = 94%
+height = 21
+radius = 10.0
+offset-x = 512
 ;offset-y = 10
 bottom = false
 fixed-center = true
@@ -46,18 +44,18 @@ padding-left = 1
 padding-right = 2
 module-margin-left = 1
 module-margin-right = 1
-font-0 = "Hack:style=Regular:size=10;1"
+font-0 = "Hack:style=Regular:size=8;1"
 font-1 = "Font Awesome 5 Brands Regular:style=Regular:size=10;3"
 font-2 = "Font Awesome 5 Free Solid:style=Solid:size=10;3"
 font-3 = "Font Awesome 5 Free Regular:style=Regular:size=10;3"
 modules-left = hour bspwm i3
 modules-center = batteryAllert
-modules-right = temperature cpu memory pulseaudio brightness battery date1
+modules-right = meteo cpu memory pulseaudio xbacklight battery date1
 tray-position = center
 tray-padding-right = 0
 tray-background = ${colors.background-alt-tray}
 tray-detached = false
-tray-maxsize = 3
+;tray-maxsize = 3
 tray-offset-y = 0
 tray-offset-x = 0
 cursor-click = pointer
@@ -68,7 +66,7 @@ monitor = ${env:MONITOR:}
 
 [module/xwindow]
 type = internal/xwindow
-label = %title:0:15:...%
+label = %title:0:30:...%
 
 [module/xkeyboard]
 type = internal/xkeyboard
@@ -143,7 +141,7 @@ label = %percentage%% 
 [module/cpu]
 type = internal/cpu
 interval = 1
-label = %percentage:1%%  
+label = %percentage:2%%  
 
 [module/memory]
 type = internal/memory
@@ -156,7 +154,8 @@ type = internal/network
 interface = wlp2s0
 interval = 5
 format-disconnected = [x]
-format-connected = <label-connected> <ramp-signal>
+;format-connected = <label-connected> <ramp-signal>
+format-connected = <ramp-signal>
 label-connected = %local_ip%
 ramp-signal-0 = [|]
 ramp-signal-1 = [||]
@@ -175,6 +174,7 @@ label-connected =  %local_ip%
 type = internal/date
 interval = 5
 date = %d %b
+;%Y
 time = %H:%M
 label = %date%  
 
@@ -198,7 +198,7 @@ type = internal/battery
 full-at = 100
 battery = BAT0
 adapter = ADP1
-poll-interval=5
+poll-interval=2
 format-discharging = <label-discharging> <ramp-capacity>
 format-charging = <label-charging> <animation-charging>  
 format-full = <label-full>  
@@ -215,17 +215,16 @@ animation-charging-1 = 
 animation-charging-2 = 
 animation-charging-3 = 
 animation-charging-4 = 
-animation-charging-framerate = 1000
+animation-charging-framerate = 900
 
 
 [module/temperature]
 type = internal/temperature
 thermal-zone = 0
-warn-temperature = 60
-label = %temperature-c% 
-label-warn = CRITICAL TEMPERATURE %temperature-c%  
-label-warn-foreground = ${colors.warning}
-label-warn-background = ${colors.background}
+warn-temperature = 69
+label =  %temperature-c%
+label-warn =  %temperature-c%
+label-warn-foreground = ${colors.background-alt-2}
 
 [settings]
 screenchange-reload = true
@@ -234,22 +233,22 @@ screenchange-reload = true
 margin-top = 5
 margin-bottom = 5
 
-[module/brightness]
+[module/batteryAllert]
 type = custom/script
-exec = bash $HOME/.config/polybar/backlight.sh
+exec = bash ~/.config/polybar/script/batteryAllert.sh
 interval = 1
 format = <label>
 format-background = ${colors.background}
 format-foreground = ${colors.foreground}
-label = %output% 
-
-[module/batteryAllert]
-type = custom/script
-exec = bash $HOME/.config/polybar/batteryallert.sh
-interval = 1
-format = <label>
-format-background = ${colors.background}
-format-foreground = ${colors.warning}
 label = %output%
 
+
+[module/meteo]
+type = custom/script
+exec = curl -s "wttr.in/(turin)?format=1"
+interval = 40
+format = <label>  
+format-background = ${colors.background}
+format-foreground = ${colors.foreground}
+label = %output%
 ; vim:ft=dosini
