@@ -20,7 +20,7 @@
 background = #4F4F4F
 background-alt = #4F4F4F
 background-alt-2 = #07ADD0
-background-alt-tray = #000000
+background-alt-tray = #00000000
 foreground = #FFFFFF
 foreground-alt = #FFFFFF
 alert = #FFFFFF
@@ -50,7 +50,7 @@ font-2 = "Font Awesome 5 Free Solid:style=Solid:size=10;3"
 font-3 = "Font Awesome 5 Free Regular:style=Regular:size=10;3"
 modules-left = hour bspwm i3
 modules-center = batteryAllert
-modules-right = meteo cpu memory pulseaudio xbacklight battery date1
+modules-right = meteo cpu memory pulseaudio xbacklight battery date
 tray-position = center
 tray-padding-right = 0
 tray-background = ${colors.background-alt-tray}
@@ -170,7 +170,7 @@ interface = enp1s0
 interval = 5
 label-connected =  %local_ip%
 
-[module/date1]
+[module/date]
 type = internal/date
 interval = 5
 date = %d %b
@@ -183,7 +183,6 @@ type = internal/date
 interval = 1
 time = %H:%M
 label = %time%
-
 
 [module/pulseaudio]
 type = internal/pulseaudio
@@ -217,13 +216,14 @@ animation-charging-3 = 
 animation-charging-4 = 
 animation-charging-framerate = 900
 
-
 [module/temperature]
 type = internal/temperature
 thermal-zone = 0
 warn-temperature = 69
-label =  %temperature-c%
-label-warn =  %temperature-c%
+#label = %temperature-c% 
+#label-warn = %temperature-c% 
+label = %temperature-c%
+label-warn = %temperature-c%
 label-warn-foreground = ${colors.background-alt-2}
 
 [settings]
@@ -242,10 +242,9 @@ format-background = ${colors.background}
 format-foreground = ${colors.foreground}
 label = %output%
 
-
 [module/meteo]
 type = custom/script
-exec = curl -s "wttr.in/(turin)?format=1"
+exec = bash ~/.config/polybar/script/meteo.sh
 interval = 40
 format = <label>  
 format-background = ${colors.background}
