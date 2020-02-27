@@ -29,7 +29,7 @@ dim-value = 0.5
 [bar/blkbar]
 width = 94%
 height = 21
-radius = 10.0
+radius = 10.5
 offset-x = 512
 ;offset-y = 10
 bottom = false
@@ -48,9 +48,9 @@ font-0 = "Hack:style=Regular:size=8;1"
 font-1 = "Font Awesome 5 Brands Regular:style=Regular:size=10;3"
 font-2 = "Font Awesome 5 Free Solid:style=Solid:size=10;3"
 font-3 = "Font Awesome 5 Free Regular:style=Regular:size=10;3"
-modules-left = bspwm i3
+modules-left = powerMenu bspwm i3
 modules-center = batteryAllert
-modules-right = cpu memory pulseaudio xbacklight battery date powerMenu
+modules-right = cpu memory pulseaudio xbacklight battery date
 tray-position = center
 tray-padding-right = 0
 tray-background = ${colors.background-alt-tray}
@@ -248,22 +248,22 @@ expand-right = true
 format-spacing = 0
 label-open = 
 label-open-foreground = ${colors.background-alt-2}
-label-close = cancel
+label-close =  
 label-close-foreground = ${colors.background-alt-2}
 label-separator = "  " 
 label-separator-foreground = ${colors.foreground-alt}
-menu-0-0 = reboot
+menu-0-0 = 
 menu-0-0-exec = menu-open-1
-menu-0-1 = power off
+menu-0-1 = 
 menu-0-1-exec = menu-open-2
-menu-1-0 = cancel
+menu-1-0 = 
 menu-1-0-exec = menu-open-0
-menu-1-1 = reboot
-menu-1-1-exec = sudo reboot
-menu-2-0 = power off
-menu-2-0-exec = sudo poweroff
-menu-2-1 = cancel
-menu-2-1-exec = menu-open-0
+menu-1-1 = 
+menu-1-1-exec = reboot
+menu-2-0 = 
+menu-2-0-exec = menu-open-0
+menu-2-1 = 
+menu-2-1-exec = poweroff
 
 [module/meteo]
 type = custom/script
