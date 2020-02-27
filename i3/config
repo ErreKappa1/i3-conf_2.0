@@ -182,9 +182,9 @@ exec_always --no-startup-id setxkbmap -layout us
 exec --no-startup-id nm-applet
 
 # Volume control
-bindsym $mod+Up exec --no-startup-id bash ~/.config/i3/script/volume/up.sh 
-bindsym $mod+Down exec --no-startup-id bash ~/.config/i3/script/volume/down.sh 
-bindsym $mod+m exec --no-startup-id bash ~/.config/i3/script/volume/toggle.sh 
+bindsym $mod+Up exec --no-startup-id amixer -q set Master 1%+
+bindsym $mod+Down exec --no-startup-id amixer -q set Master 1%-
+bindsym $mod+m exec --no-startup-id amixer -q set Master toggle
 
 # Mouse settins
 exec --no-startup-id bash $HOME/.config/i3/script/mouse-settings.sh
@@ -193,21 +193,6 @@ exec_always --no-startup-id unclutter &
 # Meme sound during startup
 exec --no-startup-id aplay ~/Music/startup_winxp.wav 
 
-# Poweroff bind
-bindsym $mod+Shift+p exec --no-startup-id bash ~/.config/polybar/script/poweroff.sh
-
 # i3lock
 bindsym $win+l exec --no-startup-id i3lock -e -i ~/Pictures/freeblackabsol/freeblackabsolblur.png -t
-
-# General binds
-bindsym $win+1 exec --no-startup-id xfce4-terminal
-bindsym $win+2 exec --no-startup-id pcmanfm
-bindsym $win+3 exec --no-startup-id telegram-desktop
-bindsym $win+4 exec --no-startup-id firefox
-bindsym $win+5 exec --no-startup-id gvim
-bindsym $win+6 exec --no-startup-id nm-connection-editor
-bindsym $win+7 exec --no-startup-id arandr
-bindsym $win+8 exec --no-startup-id octave-gui
-bindsym $win+9 exec --no-startup-id cmake-gui
-bindsym $win+0 exec --no-startup-id thunderbird
 
