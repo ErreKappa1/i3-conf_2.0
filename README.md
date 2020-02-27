@@ -4,9 +4,9 @@ New version of my i3-gaps config, It's minimal but extremely productive and easy
 
 The main bar is polybar with some plugns and some running scripts, and the app launcher is straight-out rofi
 
-![alt Some windows in tiling mode](screenshot/new/Screenshot from 2020-02-26 17-31-42.png)
+![Some windows in tiling mode](./screenshot/new/Screenshot from 2020-02-26 17-31-42.png)
 
-![alt Some windows in tiling mode](screenshot/new/Screenshot from 2020-02-26 17-24-08.png)
+![Some windows in tiling mode](./screenshot/new/Screenshot from 2020-02-26 17-24-08.png)
 
 You can find some screenshot in the Screenshot directory
 
