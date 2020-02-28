@@ -146,7 +146,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Floating window max size
-floating_maximum_size 710x580
+floating_maximum_size 1020x580
 
 # Disable window borders
 for_window [class="^.*"] border pixel 1
@@ -155,7 +155,7 @@ for_window [class="^.*"] border pixel 1
 gaps inner 2
 
 # Polybar
-###EDIT NEEDED, SETUP THE CORRECT PATH TO YOUR POLYBAR CONFIGURATIN###
+###EDIT NEEDED, SETUP THE CORRECT PATH TO YOUR POLYBAR LAUNCH SCRIPT###
 exec_always --no-startup-id bash ~/.config/polybar/script/launch.sh
 
 # Screenshot (gnome-screenshot) 052EFC
@@ -170,7 +170,6 @@ bindsym $mod+t exec --no-startup-id telegram-desktop
 # Desktop background 
 ###EDIT NEEDED, SETUP THE CORRECT PATH TO YOUR BACKGROUND###
 exec_always --no-startup-id feh --bg-fill ~/Pictures/freeblackabsol/freeblackabsol.jpg
-#exec_always --no-startup-id feh --bg-fill ~/Pictures/winxp.jpg
 
 # Keyboard layouts
 exec_always --no-startup-id setxkbmap -layout us
@@ -179,7 +178,7 @@ exec_always --no-startup-id setxkbmap -layout us
 exec --no-startup-id nm-applet
 
 # Mouse settings
-exec --no-startup-id bash $HOME/.config/i3/script/mouse-settings.sh
+exec --no-startup-id bash ~/.config/i3/script/mouse-settings.sh
 exec_always --no-startup-id unclutter &
 
 # Meme sound during startup
