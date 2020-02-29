@@ -2,9 +2,9 @@
 
 New version of my i3-gaps config, it's minimal but extremely productive and easy to use (once learned the keybindings)
 
-![Some windows in tiling mode](https://github.com/ErreKappa1/i3-conf_2.0/blob/development/screenshot/new/Screenshot%20from%202020-02-26%2017-24-08.png)
+![General overview](https://github.com/ErreKappa1/i3-conf_2.0/blob/development/screenshot/Screenshot%20from%202020-02-29%2018-04-11.png)
 
-![Some windows in tiling mode](https://github.com/ErreKappa1/i3-conf_2.0/blob/development/screenshot/new/Screenshot%20from%202020-02-26%2017-31-42.png)
+![Some random tiling stuffs](https://github.com/ErreKappa1/i3-conf_2.0/blob/development/screenshot/Screenshot%20from%202020-02-29%2018-54-29.png)
 
 You will find some screenshot in the Screenshot directory
 
