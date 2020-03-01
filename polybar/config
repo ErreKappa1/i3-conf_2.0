@@ -48,6 +48,9 @@ font-0 = "Hack:style=Regular:size=8;1"
 font-1 = "Font Awesome 5 Brands Regular:style=Regular:size=10;3"
 font-2 = "Font Awesome 5 Free Solid:style=Solid:size=10;3"
 font-3 = "Font Awesome 5 Free Regular:style=Regular:size=10;3"
+;into this file there are many options that aren't displayed in the bar, i've let them here for anyone that want to add
+;them to the acutal bar. It's a fairly simple process, you only have to add the name of the option in one of the next
+;three rows (modules-left/center/right)
 modules-left = powerMenu bspwm i3
 modules-center = batteryAllert
 modules-right = cpu memory pulseaudio xbacklight battery date
@@ -267,7 +270,7 @@ menu-2-1-exec = poweroff
 
 [module/meteo]
 type = custom/script
-exec = bash ~/.config/polybar/script/meteo.sh
+exec = curl -s "wttr.in/(yourCity)?format=1"
 interval = 40
 format = <label>  
 format-background = ${colors.background}

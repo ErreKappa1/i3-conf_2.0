@@ -159,7 +159,7 @@ gaps inner 3
 # Polybar
 exec_always --no-startup-id bash ~/.config/polybar/script/launch.sh
 
-# Screenshot (gnome-screenshot) 052EFC
+# Screenshot (gnome-screenshot)
 bindsym Control+Print exec gnome-screenshot -i
 
 # File Manager (pcmanfm)
@@ -168,14 +168,12 @@ bindsym $mod+p exec --no-startup-id pcmanfm
 # Telegram desktop
 bindsym $mod+t exec --no-startup-id telegram-desktop
 
-# Desktop background --------------------------------------------------------------------------------------------------
-#exec_always --no-startup-id feh --bg-fill ~/Pictures/other/sestriere.jpg
+# Desktop background
 exec_always --no-startup-id feh --bg-fill ~/Pictures/freeblackabsol/freeblackabsol.jpg
-#exec_always --no-startup-id feh --bg-fill ~/Pictures/winxp.jpg
 
 # Keyboard layouts
-bindsym $mod+Shift+u exec --no-startup-id bash ~/Desktop/layout_us.sh
-bindsym $mod+Shift+i exec --no-startup-id bash ~/Desktop/layout_it.sh
+bindsym $mod+Shift+u exec --no-startup-id setxkbmap -layout us
+bindsym $mod+Shift+i exec --no-startup-id setxkbmap -layout it
 exec_always --no-startup-id setxkbmap -layout us
 
 # Network manager
@@ -187,11 +185,8 @@ bindsym $mod+Down exec --no-startup-id amixer -q set Master 1%-
 bindsym $mod+m exec --no-startup-id amixer -q set Master toggle
 
 # Mouse settins
-exec --no-startup-id bash $HOME/.config/i3/script/mouse-settings.sh
+exec --no-startup-id bash ~/.config/i3/script/mouse-settings.sh
 exec_always --no-startup-id unclutter &
-
-# Meme sound during startup
-exec --no-startup-id aplay ~/Music/startup_winxp.wav 
 
 # i3lock
 bindsym $win+l exec --no-startup-id i3lock -e -i ~/Pictures/freeblackabsol/freeblackabsolblur.png -t
