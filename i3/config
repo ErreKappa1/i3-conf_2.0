@@ -1,6 +1,7 @@
 set $win Mod4
 set $mod Mod1
-font pango:DejaVu Sans Mono 8
+
+font pango:Hack 8 
 
 # use these keys for focus, movement, and resize directions when reaching for
 # the arrows is not convenient
@@ -19,8 +20,9 @@ bindsym $mod+Return exec --no-startup-id xfce4-terminal
 bindsym $mod+Shift+q kill
 
 # start rofi (a program launcher)
-###EDIT NEEDED, SETUP THE CORRECT PATH TO YOUR ROFI CONFIGURATIN###
-bindsym $mod+d exec --no-startup-id rofi -location 1 -yoffset 22 -xoffset 0 -show drun -drun-match-fields name -lines 8 -width 30 -theme black
+###EDIT NEEDED, SET THE CORRECT PATH TO YOUR ROFI CONFIGURATION OR UNCOMMENT ONE OF THOSE
+#bindsym $mod+d exec --no-startup-id rofi -location 1 -yoffset 22 -xoffset 0 -show drun -drun-match-fields name -lines 8  -width 30 -theme black
+bindsym $mod+d exec --no-startup-id rofi -location 1 -yoffset 23 -xoffset 2 -show drun -drun-match-fields name -lines 9  -width 30 -theme material
 
 # change focus (hjkl)
 bindsym $mod+$Left focus left
@@ -152,13 +154,18 @@ floating_maximum_size 1020x580
 for_window [class="^.*"] border pixel 1
 
 # Gaps
-gaps inner 2
+gaps inner 3
+#smart_gaps on
 
 # Polybar
+<<<<<<< HEAD
 ###EDIT NEEDED, SETUP THE CORRECT PATH TO YOUR POLYBAR LAUNCH SCRIPT###
+=======
+###EDIT NEEDED, SET THE CORRECT PATH TO YOUR LAUNCHER SCRIPT###
+>>>>>>> development
 exec_always --no-startup-id bash ~/.config/polybar/script/launch.sh
 
-# Screenshot (gnome-screenshot) 052EFC
+# Screenshot (gnome-screenshot)
 bindsym Control+Print exec gnome-screenshot -i
 
 # File Manager (pcmanfm)
@@ -167,25 +174,28 @@ bindsym $mod+p exec --no-startup-id pcmanfm
 # Telegram desktop
 bindsym $mod+t exec --no-startup-id telegram-desktop
 
-# Desktop background 
-###EDIT NEEDED, SETUP THE CORRECT PATH TO YOUR BACKGROUND###
+# Desktop background
+###EDIT NEEDED, SET THE CORRECT PATH TO YOUR BACKGROUND###
 exec_always --no-startup-id feh --bg-fill ~/Pictures/freeblackabsol/freeblackabsol.jpg
 
 # Keyboard layouts
+bindsym $mod+Shift+u exec --no-startup-id setxkbmap -layout us
+bindsym $mod+Shift+i exec --no-startup-id setxkbmap -layout it
 exec_always --no-startup-id setxkbmap -layout us
 
 # Network manager
 exec --no-startup-id nm-applet
 
+# Volume control
+bindsym $mod+Up exec --no-startup-id amixer -q set Master 1%+
+bindsym $mod+Down exec --no-startup-id amixer -q set Master 1%-
+bindsym $mod+m exec --no-startup-id amixer -q set Master toggle
+
 # Mouse settings
 exec --no-startup-id bash ~/.config/i3/script/mouse-settings.sh
 exec_always --no-startup-id unclutter &
 
-# Meme sound during startup
-###EDIT NEEDED, SETUP THE CORRECT PATH TO YOUR IDIOTIC STARTUP SOUND###
-exec --no-startup-id aplay ~/Music/startup_winxp.wav 
-
 # i3lock
-###EDIT NEEDED, SETUP THE CORRECT PATH TO YOUR LOCKSCREEN BACKGROUND WALLPAPER (need to be a .png)###
+###EDIT NEEDED, SETUP THE CORRECT PATH TO YOUR LOCKSCREEN BACKGROUND (only .png files)
 bindsym $win+l exec --no-startup-id i3lock -e -i ~/Pictures/freeblackabsol/freeblackabsolblur.png -t
 
