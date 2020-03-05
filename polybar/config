@@ -53,7 +53,7 @@ font-3 = "Font Awesome 5 Free Regular:style=Regular:size=10;3"
 ;three rows (modules-left/center/right)
 modules-left = powerMenu bspwm i3
 modules-center = batteryAllert
-modules-right = cpu memory pulseaudio xbacklight battery date
+modules-right = temperature cpu memory pulseaudio xbacklight battery date
 tray-position = center
 tray-padding-right = 0
 tray-background = ${colors.background-alt-tray}
