@@ -20,7 +20,7 @@
 background = #4F4F4F
 background-alt = #4F4F4F
 background-alt-2 = #07ADD0
-background-alt-tray = #00000000
+background-alt-tray = #000000
 foreground = #FFFFFF
 foreground-alt = #FFFFFF
 alert = #FFFFFF
